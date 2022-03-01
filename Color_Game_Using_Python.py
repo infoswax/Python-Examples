@@ -68,8 +68,7 @@ def countdown():
 		timeleft -= 1
 		
 		# update the time left label
-		timeLabel.config(text = "Time left: "
-							+ str(timeleft))
+		timeLabel.config(text = "Time left: " + str(timeleft))
 								
 		# run the function again after 1 second.
 		timeLabel.after(1000, countdown)
@@ -87,19 +86,15 @@ root.title("COLORGAME")
 root.geometry("375x200")
 
 # add an instructions label
-instructions = tkinter.Label(root, text = "Type in the colour"
-						"of the words, and not the word text!",
-									font = ('Helvetica', 12))
+instructions = tkinter.Label(root, text = "Type in the colour of the words, and not the word text!", font = ('Helvetica', 12))
 instructions.pack()
 
 # add a score label
-scoreLabel = tkinter.Label(root, text = "Press enter to start",
-									font = ('Helvetica', 12))
+scoreLabel = tkinter.Label(root, text = "Press enter to start", font = ('Helvetica', 12))
 scoreLabel.pack()
 
 # add a time left label
-timeLabel = tkinter.Label(root, text = "Time left: " +
-			str(timeleft), font = ('Helvetica', 12))
+timeLabel = tkinter.Label(root, text = "Time left: " + str(timeleft), font = ('Helvetica', 12))
 				
 timeLabel.pack()
 
