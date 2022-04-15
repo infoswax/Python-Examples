@@ -1,8 +1,7 @@
 # import all functions from the tkinter
 from tkinter import *
 
-# function for removing common characters
-# with their respective occurrences
+# function for removing common characters with their respective occurrences
 def remove_match_char(list1, list2):
 
 	for i in range(len(list1)) :
@@ -26,8 +25,7 @@ def remove_match_char(list1, list2):
 				# return the concatenated list with True flag
 				return [list3, True]
 
-	# no common characters is found
-	# return the concatenated list with False flag
+	# no common characters is found return the concatenated list with False flag
 	list3 = list1 + ["*"] + list2
 	return [list3, False]
 
@@ -56,8 +54,7 @@ def tell_status() :
 	# taking a flag as True initially
 	proceed = True
 	
-	# keep calling remove_match_char function
-	# until common characters is found or
+	# keep calling remove_match_char function until common characters is found or
 	# keep looping until proceed flag is True
 	while proceed :
 
@@ -73,9 +70,7 @@ def tell_status() :
 		# find the index of "*" / border mark
 		star_index = con_list.index("*")
 
-		# list slicing perform
-		
-		# all characters before * store in p1_list
+		# list slicing perform all characters before * store in p1_list
 		p1_list = con_list[ : star_index]
 
 		# all characters after * store in p2_list
@@ -88,16 +83,13 @@ def tell_status() :
 	# list of FLAMES acronym
 	result = ["Friends", "Love", "Affection", "Marriage", "Enemy", "Siblings"]
 
-	# keep looping until only one item
-	# is not remaining in the result list
+	# keep looping until only one item is not remaining in the result list
 	while len(result) > 1 :
 
-		# store that index value from
-		# where we have to perform slicing.
+		# store that index value from where we have to perform slicing.
 		split_index = (count % len(result) - 1)
 
-		# this steps is done for performing
-		# anticlock-wise circular fashion counting.
+		# this steps is done for performing anticlock-wise circular fashion counting.
 		if split_index >= 0 :
 
 			# list slicing
@@ -110,13 +102,11 @@ def tell_status() :
 		else :
 			result = result[ : len(result) - 1]
 
-	# insert method inserting the
-		# value in the text entry box.
+	# insert method inserting the value in the text entry box.
 	Status_field.insert(10, result[0])
 
 
-# Function for clearing the
-# contents of all text entry boxes
+# Function for clearing the contents of all text entry boxes
 def clear_all() :
 	Player1_field.delete(0, END)
 	Player2_field.delete(0, END)
@@ -133,7 +123,7 @@ if __name__ == "__main__" :
 	root = Tk()
 
 	# Set the background colour of GUI window
-	root.configure(background = 'light green')
+	root.configure(background = 'light gray')
 
 	# Set the configuration of GUI window
 	root.geometry("350x125")
@@ -142,51 +132,37 @@ if __name__ == "__main__" :
 	root.title("Flames Game")
 	
 	# Create a Player 1 Name: label
-	label1 = Label(root, text = "Player 1 Name: ",
-				fg = 'black', bg = 'dark green')
+	label1 = Label(root, text = "Player 1 Name: ", fg = 'black', bg = 'gray')
 
 	# Create a Player 2 Name: label
-	label2 = Label(root, text = "Player 2 Name: ",
-				fg = 'black', bg = 'dark green')
+	label2 = Label(root, text = "Player 2 Name: ", fg = 'black', bg = 'gray')
 	
 	# Create a Relation Status: label
-	label3 = Label(root, text = "Relationship Status: ",
-				fg = 'black', bg = 'red')
+	label3 = Label(root, text = "Relationship Status: ", fg = 'black', bg = 'gray')
 
-	# grid method is used for placing
-	# the widgets at respective positions
-	# in table like structure .
+	# grid method is used for placing the widgets at respective positions in table like structure .
 	label1.grid(row = 1, column = 0, sticky ="E")
 	label2.grid(row = 2, column = 0, sticky ="E")
 	label3.grid(row = 4, column = 0, sticky ="E")
 
-	# Create a text entry box
-	# for filling or typing the information.
+	# Create a text entry box for filling or typing the information.
 	Player1_field = Entry(root)
 	Player2_field = Entry(root)
 	Status_field = Entry(root)
 
-	# grid method is used for placing
-	# the widgets at respective positions
-	# in table like structure .
+	# grid method is used for placing the widgets at respective positions in table like structure .
 	# ipadx keyword argument set width of entry space .
 	Player1_field.grid(row = 1, column = 1, ipadx ="50")
 	Player2_field.grid(row = 2, column = 1, ipadx ="50")
 	Status_field.grid(row = 4, column = 1, ipadx ="50")
 
-	# Create a Submit Button and attached
-	# to tell_status function
-	button1 = Button(root, text = "Submit", bg = "red",
-					fg = "black", command = tell_status)
+	# Create a Submit Button and attached to tell_status function
+	button1 = Button(root, text = "Submit", bg = "green", fg = "black", command = tell_status)
 
-	# Create a Clear Button and attached
-	# to clear_all function
-	button2 = Button(root, text = "Clear", bg = "red",
-					fg = "black", command = clear_all)
+	# Create a Clear Button and attached to clear_all function
+	button2 = Button(root, text = "Clear", bg = "red", fg = "black", command = clear_all)
 
-	# grid method is used for placing
-	# the widgets at respective positions
-	# in table like structure .
+	# grid method is used for placing the widgets at respective positions in table like structure .
 	button1.grid(row = 3, column = 1)
 	button2.grid(row = 5, column = 1)
 
